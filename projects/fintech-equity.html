@@ -3,20 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Microsoft / Activision — M&A Analysis · Vasu Chaudhary</title>
+<title>Fintech Equity Research · Vasu Chaudhary</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400;500&family=Syne:wght@400;500;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg: #ffffff; --bg2: #f0f4f9;
-    --surface: rgba(255,255,255,0.75);
-    --border: rgba(5,31,64,0.10);
+    --surface: rgba(255,255,255,0.75); --border: rgba(5,31,64,0.10);
     --text-primary: #000000; --text-secondary: #2a3a52; --text-muted: #7a8fa8;
     --accent: #051f40; --accent-light: #dce7f5; --accent2: #0a3d7a;
     --gold: #b8960c; --line: rgba(5,31,64,0.10);
-    --shadow: 0 2px 32px rgba(5,31,64,0.10);
-    --radius: 2px;
+    --shadow: 0 2px 32px rgba(5,31,64,0.10); --radius: 2px;
     --font-display: 'Cormorant Garamond', Georgia, serif;
     --font-ui: 'Syne', sans-serif;
     --font-mono: 'DM Mono', monospace;
@@ -54,15 +52,13 @@
   body {
     background: var(--bg); color: var(--text-primary);
     font-family: var(--font-ui); font-weight: 400; line-height: 1.6;
-    overflow-x: hidden;
-    transition: background 0.4s var(--ease), color 0.4s var(--ease);
+    overflow-x: hidden; transition: background 0.4s var(--ease), color 0.4s var(--ease);
   }
   body::before {
     content: ''; position: fixed; inset: 0; z-index: 0; pointer-events: none;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
     opacity: 0.4;
   }
-
   .orb { position: fixed; border-radius: 50%; filter: blur(120px); pointer-events: none; z-index: 0; }
   .orb-1 { width:600px; height:600px; top:-200px; right:-200px; background: radial-gradient(circle, var(--accent-light) 0%, transparent 70%); opacity:0.45; animation: orb1 20s ease-in-out infinite alternate; }
   .orb-2 { width:500px; height:500px; bottom:10%; left:-150px; background: radial-gradient(circle, color-mix(in srgb, var(--accent2) 20%, transparent) 0%, transparent 70%); opacity:0.25; animation: orb2 25s ease-in-out infinite alternate; }
@@ -71,7 +67,6 @@
 
   .container { max-width:1100px; margin:0 auto; padding:0 2rem; position:relative; z-index:1; }
 
-  /* NAV */
   header {
     position:fixed; top:0; left:0; right:0; z-index:100; padding:1.2rem 0;
     backdrop-filter:blur(20px) saturate(1.4); -webkit-backdrop-filter:blur(20px) saturate(1.4);
@@ -81,38 +76,33 @@
   .nav { display:flex; align-items:center; justify-content:space-between; max-width:1100px; margin:0 auto; padding:0 2rem; }
   .nav-logo { font-family:var(--font-display); font-size:1.5rem; font-weight:600; letter-spacing:-0.02em; color:var(--text-primary); text-decoration:none; }
   .nav-logo span { color:var(--accent); font-style:italic; }
-  .nav-back { font-family:var(--font-mono); font-size:0.7rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-secondary); text-decoration:none; display:flex; align-items:center; gap:0.5rem; transition:color 0.25s; }
-  .nav-back:hover { color:var(--accent); }
   .nav-right { display:flex; align-items:center; gap:2rem; }
+  .nav-back { font-family:var(--font-mono); font-size:0.7rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-secondary); text-decoration:none; transition:color 0.25s; }
+  .nav-back:hover { color:var(--accent); }
   .theme-toggle { display:flex; align-items:center; justify-content:center; width:38px; height:38px; background:var(--surface); border:1px solid var(--border); border-radius:50%; cursor:pointer; backdrop-filter:blur(12px); transition:border-color 0.25s, transform 0.25s; flex-shrink:0; }
   .theme-toggle:hover { border-color:var(--accent); transform:rotate(20deg); }
   .theme-toggle svg { width:16px; height:16px; fill:var(--text-secondary); transition:fill 0.25s; }
   .theme-toggle:hover svg { fill:var(--accent); }
 
   /* HERO */
-  .project-hero {
-    min-height: 100vh; display:flex; align-items:center; padding: 8rem 0 5rem;
-    position: relative;
-  }
+  .project-hero { min-height:100vh; display:flex; align-items:center; padding:8rem 0 5rem; position:relative; }
   .project-hero-grid { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center; width:100%; }
-  .hero-eyebrow { font-family:var(--font-mono); font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--accent); display:flex; align-items:center; gap:0.75rem; margin-bottom:1.25rem; opacity:0; animation: fadeUp 0.8s 0.2s var(--ease) forwards; }
+  .hero-eyebrow { font-family:var(--font-mono); font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--accent); display:flex; align-items:center; gap:0.75rem; margin-bottom:1.25rem; opacity:0; animation:fadeUp 0.8s 0.2s var(--ease) forwards; }
   .hero-eyebrow::after { content:''; flex:1; max-width:60px; height:1px; background:var(--accent); opacity:0.4; }
-  .project-title-main { font-family:var(--font-display); font-size:clamp(3rem,6vw,5.5rem); font-weight:300; line-height:0.95; letter-spacing:-0.03em; margin-bottom:0.5rem; opacity:0; animation: fadeUp 0.8s 0.3s var(--ease) forwards; }
+  .project-title-main { font-family:var(--font-display); font-size:clamp(3rem,6vw,5.5rem); font-weight:300; line-height:0.95; letter-spacing:-0.03em; margin-bottom:0.5rem; opacity:0; animation:fadeUp 0.8s 0.3s var(--ease) forwards; }
   .project-title-main em { display:block; font-style:italic; color:var(--accent); }
-  .project-subtitle { font-family:var(--font-display); font-size:clamp(1rem,2vw,1.3rem); font-weight:300; color:var(--text-secondary); font-style:italic; margin-bottom:2rem; opacity:0; animation: fadeUp 0.8s 0.4s var(--ease) forwards; }
-  .project-desc-hero { font-size:0.95rem; color:var(--text-secondary); line-height:1.8; max-width:480px; margin-bottom:2.5rem; opacity:0; animation: fadeUp 0.8s 0.5s var(--ease) forwards; }
-  .status-badge { display:inline-flex; align-items:center; gap:0.5rem; font-family:var(--font-mono); font-size:0.65rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold); padding:0.4rem 1rem; border:1px solid var(--gold); border-radius:2px; opacity:0; animation: fadeUp 0.8s 0.6s var(--ease) forwards; }
+  .project-subtitle { font-family:var(--font-display); font-size:clamp(1rem,2vw,1.3rem); font-weight:300; color:var(--text-secondary); font-style:italic; margin-bottom:2rem; opacity:0; animation:fadeUp 0.8s 0.4s var(--ease) forwards; }
+  .project-desc-hero { font-size:0.95rem; color:var(--text-secondary); line-height:1.8; max-width:480px; margin-bottom:2.5rem; opacity:0; animation:fadeUp 0.8s 0.5s var(--ease) forwards; }
+  .status-badge { display:inline-flex; align-items:center; gap:0.5rem; font-family:var(--font-mono); font-size:0.65rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold); padding:0.4rem 1rem; border:1px solid var(--gold); border-radius:2px; opacity:0; animation:fadeUp 0.8s 0.6s var(--ease) forwards; }
   .status-badge::before { content:''; width:6px; height:6px; border-radius:50%; background:var(--gold); box-shadow:0 0 6px var(--gold); animation:pulse 2s infinite; }
   @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
-
-  .hero-meta { display:flex; flex-direction:column; gap:1rem; opacity:0; animation: fadeLeft 0.9s 0.4s var(--ease) forwards; }
+  .hero-meta { display:flex; flex-direction:column; gap:1rem; opacity:0; animation:fadeLeft 0.9s 0.4s var(--ease) forwards; }
   .meta-card { background:var(--surface); border:1px solid var(--border); border-radius:4px; padding:1.25rem 1.5rem; backdrop-filter:blur(12px); transition:border-color 0.25s; }
   .meta-card:hover { border-color:var(--accent); }
   .meta-label { font-family:var(--font-mono); font-size:0.62rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--accent); margin-bottom:0.35rem; }
   .meta-value { font-family:var(--font-display); font-size:1.1rem; font-weight:700; color:var(--text-primary); line-height:1.2; margin-bottom:0.2rem; }
   .meta-sub { font-family:var(--font-mono); font-size:0.68rem; color:var(--text-muted); font-weight:300; }
 
-  /* SECTIONS */
   section { padding:6rem 0; }
   .section-header { margin-bottom:3.5rem; }
   .section-eyebrow { font-family:var(--font-mono); font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--accent); display:flex; align-items:center; gap:0.75rem; margin-bottom:0.75rem; }
@@ -121,17 +111,15 @@
   .section-title em { font-style:italic; color:var(--accent); }
   .divider { height:1px; background:var(--line); }
 
-  /* DEAL OVERVIEW */
-  .deal-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1rem; margin-bottom:3rem; }
-  .deal-stat { background:var(--surface); border:1px solid var(--border); border-radius:4px; padding:1.5rem; backdrop-filter:blur(12px); text-align:center; transition:border-color 0.25s, box-shadow 0.25s; }
-  .deal-stat:hover { border-color:var(--accent); box-shadow:var(--shadow); }
-  .deal-stat-num { font-family:var(--font-display); font-size:2.2rem; font-weight:600; color:var(--accent); line-height:1; margin-bottom:0.4rem; }
-  .deal-stat-label { font-family:var(--font-mono); font-size:0.62rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-muted); }
-  .deal-context { display:grid; grid-template-columns:1fr 1fr; gap:2rem; }
-  .deal-context-block p { font-size:0.92rem; color:var(--text-secondary); line-height:1.8; margin-bottom:1rem; }
-  .deal-context-block h4 { font-family:var(--font-display); font-size:1.2rem; font-weight:600; margin-bottom:0.75rem; }
+  .overview-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1rem; margin-bottom:3rem; }
+  .overview-stat { background:var(--surface); border:1px solid var(--border); border-radius:4px; padding:1.5rem; backdrop-filter:blur(12px); text-align:center; transition:border-color 0.25s, box-shadow 0.25s; }
+  .overview-stat:hover { border-color:var(--accent); box-shadow:var(--shadow); }
+  .overview-stat-num { font-family:var(--font-display); font-size:2.2rem; font-weight:600; color:var(--accent); line-height:1; margin-bottom:0.4rem; }
+  .overview-stat-label { font-family:var(--font-mono); font-size:0.62rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-muted); }
+  .overview-context { display:grid; grid-template-columns:1fr 1fr; gap:2rem; }
+  .overview-block p { font-size:0.92rem; color:var(--text-secondary); line-height:1.8; margin-bottom:1rem; }
+  .overview-block h4 { font-family:var(--font-display); font-size:1.2rem; font-weight:600; margin-bottom:0.75rem; }
 
-  /* DELIVERABLES */
   .deliverables-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1.5rem; }
   .deliverable-card { background:var(--surface); border:1px solid var(--border); border-radius:4px; padding:2rem; backdrop-filter:blur(12px); position:relative; overflow:hidden; opacity:0; transform:translateY(20px); transition:opacity 0.6s, transform 0.6s, box-shadow 0.3s, border-color 0.3s; }
   .deliverable-card.visible { opacity:1; transform:translateY(0); }
@@ -149,17 +137,21 @@
   .tag { padding:0.25rem 0.7rem; background:var(--accent-light); color:var(--accent); border-radius:2px; font-family:var(--font-mono); font-size:0.62rem; letter-spacing:0.08em; display:inline-block; }
   .tags { display:flex; flex-wrap:wrap; gap:0.4rem; }
 
-  /* METHODOLOGY */
   .methodology-grid { display:grid; grid-template-columns:1fr 1fr; gap:2rem; }
   .method-block { opacity:0; transform:translateY(20px); transition:opacity 0.6s, transform 0.6s; }
   .method-block.visible { opacity:1; transform:translateY(0); }
-  .method-block h4 { font-family:var(--font-display); font-size:1.15rem; font-weight:600; margin-bottom:0.6rem; color:var(--text-primary); }
-  .method-block p { font-size:0.88rem; color:var(--text-secondary); line-height:1.8; }
   .method-step { display:flex; gap:1rem; margin-bottom:1rem; align-items:flex-start; }
   .method-step-num { font-family:var(--font-mono); font-size:0.65rem; color:var(--accent); background:var(--accent-light); padding:0.2rem 0.5rem; border-radius:2px; flex-shrink:0; margin-top:0.15rem; }
   .method-step-text { font-size:0.88rem; color:var(--text-secondary); line-height:1.7; }
 
-  /* BACK LINK */
+  /* SECTOR THEMES */
+  .sector-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin-top:2rem; }
+  .sector-pill { background:var(--surface); border:1px solid var(--border); border-radius:4px; padding:1.25rem; backdrop-filter:blur(12px); text-align:center; transition:border-color 0.25s; }
+  .sector-pill:hover { border-color:var(--accent); }
+  .sector-icon { font-size:1.5rem; margin-bottom:0.5rem; }
+  .sector-name { font-family:var(--font-display); font-size:1rem; font-weight:600; margin-bottom:0.25rem; }
+  .sector-sub { font-family:var(--font-mono); font-size:0.65rem; color:var(--text-muted); }
+
   .back-section { padding:4rem 0; }
   .back-link { display:inline-flex; align-items:center; gap:0.75rem; font-family:var(--font-mono); font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-secondary); text-decoration:none; transition:color 0.25s; }
   .back-link:hover { color:var(--accent); }
@@ -175,10 +167,11 @@
 
   @media (max-width:768px) {
     .project-hero-grid { grid-template-columns:1fr; gap:2.5rem; }
-    .deal-grid { grid-template-columns:repeat(2,1fr); }
-    .deal-context { grid-template-columns:1fr; }
+    .overview-grid { grid-template-columns:repeat(2,1fr); }
+    .overview-context { grid-template-columns:1fr; }
     .deliverables-grid { grid-template-columns:1fr; }
     .methodology-grid { grid-template-columns:1fr; }
+    .sector-grid { grid-template-columns:1fr; }
     .hero-meta { display:none; }
   }
 </style>
@@ -207,32 +200,32 @@
   <div class="container">
     <div class="project-hero-grid">
       <div>
-        <div class="hero-eyebrow">01 — M&amp;A Case Study</div>
-        <h1 class="project-title-main">Microsoft<em>× Activision</em></h1>
-        <p class="project-subtitle">Buy-Side M&amp;A Analysis · Technology Transactions</p>
-        <p class="project-desc-hero">A full buy-side M&A analysis of Microsoft's $68.7bn acquisition of Activision Blizzard — the largest deal in gaming history. Covers DCF valuation, comparable transactions, WACC build-up, and a structured buy-side pitch deck.</p>
+        <div class="hero-eyebrow">03 — Equity Research · FinTech</div>
+        <h1 class="project-title-main">FinTech<em>Equity Research</em></h1>
+        <p class="project-subtitle">Initiating Coverage · Sector Analysis · Buy-Side Thesis</p>
+        <p class="project-desc-hero">An independent equity research project covering a high-growth FinTech company — built to the standard of an initiating coverage note. Includes a full financial model, DCF valuation, trading comps, sector overview, and a structured investment thesis with a clear recommendation.</p>
         <div class="status-badge">In Progress</div>
       </div>
       <div class="hero-meta">
         <div class="meta-card">
-          <div class="meta-label">Deal Value</div>
-          <div class="meta-value">$68.7 Billion</div>
-          <div class="meta-sub">Announced Jan 2022 · Closed Oct 2023</div>
+          <div class="meta-label">Research Type</div>
+          <div class="meta-value">Initiating Coverage</div>
+          <div class="meta-sub">Independent · Buy-Side Standard</div>
         </div>
         <div class="meta-card">
-          <div class="meta-label">Premium Paid</div>
-          <div class="meta-value">~45% Premium</div>
-          <div class="meta-sub">Over 30-day VWAP at announcement</div>
+          <div class="meta-label">Sector Focus</div>
+          <div class="meta-value">FinTech</div>
+          <div class="meta-sub">Payments · Lending · Infrastructure</div>
         </div>
         <div class="meta-card">
-          <div class="meta-label">Sector</div>
-          <div class="meta-value">Technology · Gaming</div>
-          <div class="meta-sub">Interactive Entertainment · Cloud</div>
+          <div class="meta-label">Valuation Methods</div>
+          <div class="meta-value">DCF + Comps</div>
+          <div class="meta-sub">Trading Multiples · Intrinsic Value</div>
         </div>
         <div class="meta-card">
           <div class="meta-label">Deliverables</div>
-          <div class="meta-value">4 Outputs</div>
-          <div class="meta-sub">DCF · Comps · WACC · Pitch Deck</div>
+          <div class="meta-value">5 Outputs</div>
+          <div class="meta-sub">Model · DCF · Comps · Sector · Thesis</div>
         </div>
       </div>
     </div>
@@ -241,41 +234,59 @@
 
 <div class="divider"></div>
 
-<!-- DEAL OVERVIEW -->
+<!-- OVERVIEW -->
 <section id="overview">
   <div class="container">
     <div class="section-header reveal">
-      <div class="section-eyebrow">02 — Deal Overview</div>
-      <h2 class="section-title">The deal <em>at a glance</em></h2>
+      <div class="section-eyebrow">02 — Project Overview</div>
+      <h2 class="section-title">The <em>research agenda</em></h2>
     </div>
-    <div class="deal-grid reveal">
-      <div class="deal-stat">
-        <div class="deal-stat-num">$68.7B</div>
-        <div class="deal-stat-label">Enterprise Value</div>
+    <div class="overview-grid reveal">
+      <div class="overview-stat">
+        <div class="overview-stat-num">5yr</div>
+        <div class="overview-stat-label">Financial Model</div>
       </div>
-      <div class="deal-stat">
-        <div class="deal-stat-num">~45%</div>
-        <div class="deal-stat-label">Control Premium</div>
+      <div class="overview-stat">
+        <div class="overview-stat-num">8+</div>
+        <div class="overview-stat-label">Peer Comparables</div>
       </div>
-      <div class="deal-stat">
-        <div class="deal-stat-num">~26x</div>
-        <div class="deal-stat-label">EV / EBITDA</div>
+      <div class="overview-stat">
+        <div class="overview-stat-num">3x</div>
+        <div class="overview-stat-label">Valuation Methods</div>
       </div>
-      <div class="deal-stat">
-        <div class="deal-stat-num">21 mo</div>
-        <div class="deal-stat-label">Time to Close</div>
+      <div class="overview-stat">
+        <div class="overview-stat-num">1</div>
+        <div class="overview-stat-label">Clear Recommendation</div>
       </div>
     </div>
-    <div class="deal-context reveal">
-      <div class="deal-context-block">
-        <h4>Strategic Rationale</h4>
-        <p>Microsoft acquired Activision Blizzard to accelerate its position in gaming — one of the fastest-growing entertainment categories — and to strengthen its Xbox Game Pass subscription service with a catalogue of iconic franchises including Call of Duty, World of Warcraft, and Candy Crush.</p>
-        <p>The acquisition also deepened Microsoft's presence in mobile gaming and positioned it strategically for cloud gaming and metaverse development, consistent with its broader Azure cloud growth strategy.</p>
+    <div class="overview-context reveal">
+      <div class="overview-block">
+        <h4>Why FinTech Equity Research?</h4>
+        <p>FinTech sits at the exact intersection of this project's two core themes — financial rigour and technology fluency. Covering a FinTech company demands understanding both traditional valuation frameworks and the unique unit economics that drive technology-enabled financial businesses: take rates, CAC, LTV, and payment volumes.</p>
+        <p>An initiating coverage note also mirrors the output expected of an equity research analyst at the junior level — it is a credible, structured showcase of the full analytical toolkit.</p>
       </div>
-      <div class="deal-context-block">
-        <h4>Key Deal Dynamics</h4>
-        <p>The transaction faced intense regulatory scrutiny across the US, EU, and UK, with the UK's CMA initially blocking the deal before approving a restructured version. The extended 21-month timeline between announcement and close is one of the longest in major tech M&A history.</p>
-        <p>Microsoft financed the deal entirely with cash, signalling strong balance sheet confidence. The deal closed at $95 per share — an all-cash consideration that gave Activision shareholders certainty in a volatile market environment.</p>
+      <div class="overview-block">
+        <h4>Sector Context</h4>
+        <p>The global FinTech sector has undergone significant repricing since 2021 — from peak valuations to a more fundamentals-driven environment. This creates an interesting research backdrop: companies that were priced for hypergrowth now need to demonstrate sustainable unit economics and a credible path to profitability.</p>
+        <p>The research note engages directly with this valuation reset, examining whether current multiples are justified relative to growth prospects and comparing against established financial services peers.</p>
+      </div>
+    </div>
+
+    <div class="sector-grid reveal" style="margin-top:3rem;">
+      <div class="sector-pill">
+        <div class="sector-icon">💳</div>
+        <div class="sector-name">Payments</div>
+        <div class="sector-sub">TPV · Take Rate · Margin</div>
+      </div>
+      <div class="sector-pill">
+        <div class="sector-icon">🏦</div>
+        <div class="sector-name">Digital Lending</div>
+        <div class="sector-sub">NIM · Credit Quality · CAC</div>
+      </div>
+      <div class="sector-pill">
+        <div class="sector-icon">⚙️</div>
+        <div class="sector-name">Infrastructure</div>
+        <div class="sector-sub">API Revenue · ARR · NRR</div>
       </div>
     </div>
   </div>
@@ -287,75 +298,92 @@
 <section id="deliverables">
   <div class="container">
     <div class="section-header reveal">
-      <div class="section-eyebrow">03 — Project Deliverables</div>
+      <div class="section-eyebrow">03 — Deliverables</div>
       <h2 class="section-title">What's being <em>built</em></h2>
     </div>
     <div class="deliverables-grid">
 
       <div class="deliverable-card">
         <div class="deliverable-num">001</div>
-        <div class="deliverable-title">DCF Valuation Model</div>
-        <div class="deliverable-desc">A full discounted cash flow model of Activision Blizzard built from historical financials, projecting five-year free cash flows and deriving an intrinsic value range via terminal value and sensitivity analysis.</div>
+        <div class="deliverable-title">Financial Model</div>
+        <div class="deliverable-desc">A full 5-year financial model built from the ground up — income statement, balance sheet, and cash flow statement — with explicit assumptions for each revenue line and cost driver.</div>
         <ul class="deliverable-items">
-          <li>Revenue build from segment-level drivers (PC, Console, Mobile)</li>
-          <li>EBITDA margin assumptions benchmarked to peers</li>
-          <li>Free cash flow bridge from EBIT to unlevered FCF</li>
-          <li>Terminal value via Gordon Growth and Exit Multiple methods</li>
-          <li>Sensitivity table — WACC vs. Terminal Growth Rate</li>
+          <li>Revenue segmentation by product / geography</li>
+          <li>Unit economics — CAC, LTV, take rate analysis</li>
+          <li>EBITDA margin trajectory and path to profitability</li>
+          <li>Working capital and cash conversion modelling</li>
+          <li>3-statement integration and balance sheet checks</li>
         </ul>
         <div class="tags" style="margin-bottom:1rem;">
-          <span class="tag">Excel</span><span class="tag">DCF</span><span class="tag">Sensitivity</span><span class="tag">Terminal Value</span>
+          <span class="tag">Excel</span><span class="tag">3-Statement</span><span class="tag">Unit Economics</span>
         </div>
         <div class="deliverable-status">In Progress</div>
       </div>
 
       <div class="deliverable-card" style="transition-delay:0.1s">
         <div class="deliverable-num">002</div>
-        <div class="deliverable-title">Comparable Transactions</div>
-        <div class="deliverable-desc">A precedent transaction analysis of landmark technology and gaming M&A deals, benchmarking deal multiples to contextualise the premium paid in the Microsoft / Activision transaction.</div>
+        <div class="deliverable-title">DCF Valuation</div>
+        <div class="deliverable-desc">A discounted cash flow valuation anchored to the financial model, with WACC built bottom-up and terminal value derived using both Gordon Growth and exit multiple approaches.</div>
         <ul class="deliverable-items">
-          <li>10+ comparable technology M&A transactions</li>
-          <li>EV/Revenue and EV/EBITDA multiples at announcement</li>
-          <li>Control premium analysis vs. 30/60-day VWAP</li>
-          <li>Deal size, structure, and financing breakdown</li>
-          <li>Python-assisted data aggregation and formatting</li>
+          <li>Unlevered FCF derived from 3-statement model</li>
+          <li>WACC — CAPM cost of equity, market cost of debt</li>
+          <li>Dual terminal value methodology for triangulation</li>
+          <li>Sensitivity table — WACC vs. terminal growth</li>
+          <li>Implied price target with upside / downside %</li>
         </ul>
         <div class="tags" style="margin-bottom:1rem;">
-          <span class="tag">Excel</span><span class="tag">Python</span><span class="tag">Comps</span><span class="tag">M&A Multiples</span>
+          <span class="tag">DCF</span><span class="tag">WACC</span><span class="tag">Price Target</span><span class="tag">Sensitivity</span>
         </div>
         <div class="deliverable-status">In Progress</div>
       </div>
 
       <div class="deliverable-card" style="transition-delay:0.2s">
         <div class="deliverable-num">003</div>
-        <div class="deliverable-title">WACC Analysis</div>
-        <div class="deliverable-desc">A bottom-up WACC build for Activision Blizzard, constructing the cost of equity via CAPM and cost of debt from observable market data, arriving at a weighted average discount rate for use in the DCF.</div>
+        <div class="deliverable-title">Trading Comps</div>
+        <div class="deliverable-desc">A peer trading comparables analysis benchmarking the subject company against 8+ listed FinTech and financial services peers on revenue growth, margins, and valuation multiples.</div>
         <ul class="deliverable-items">
-          <li>Beta estimation — raw, adjusted, and unlevered</li>
-          <li>Risk-free rate from US 10-year Treasury</li>
-          <li>Equity risk premium from Damodaran dataset</li>
-          <li>Cost of debt from Activision's public bond yields</li>
-          <li>Capital structure weighting at market values</li>
+          <li>EV/Revenue and EV/EBITDA on NTM estimates</li>
+          <li>P/E and Price/FCF for profitable peers</li>
+          <li>Growth-adjusted multiples — EV/Revenue / NTM growth</li>
+          <li>Margin profile comparison — gross, EBITDA, FCF</li>
+          <li>Relative positioning on growth vs. valuation scatter</li>
         </ul>
         <div class="tags" style="margin-bottom:1rem;">
-          <span class="tag">WACC</span><span class="tag">CAPM</span><span class="tag">Beta</span><span class="tag">Capital Structure</span>
+          <span class="tag">Trading Comps</span><span class="tag">EV/Revenue</span><span class="tag">NTM Multiples</span><span class="tag">Excel</span>
         </div>
         <div class="deliverable-status">In Progress</div>
       </div>
 
       <div class="deliverable-card" style="transition-delay:0.3s">
         <div class="deliverable-num">004</div>
-        <div class="deliverable-title">Buy-Side Pitch Deck</div>
-        <div class="deliverable-desc">A structured buy-side M&A pitch deck presenting the investment thesis, valuation summary, synergy analysis, and deal risks — formatted to mirror the outputs produced by M&A advisory teams at boutique and bulge bracket banks.</div>
+        <div class="deliverable-title">Sector Overview</div>
+        <div class="deliverable-desc">A structured overview of the FinTech landscape — covering market size, growth drivers, competitive dynamics, regulatory environment, and the key metrics used to evaluate businesses in the sector.</div>
         <ul class="deliverable-items">
-          <li>Executive summary and transaction overview</li>
-          <li>Strategic rationale and synergy framework</li>
-          <li>Valuation summary — DCF, comps, football field</li>
-          <li>Accretion / dilution and pro-forma analysis</li>
-          <li>Key risks and regulatory considerations</li>
+          <li>Global FinTech market sizing and growth trajectory</li>
+          <li>Sub-sector breakdown — payments, lending, infrastructure</li>
+          <li>Key valuation frameworks specific to FinTech</li>
+          <li>Regulatory environment — FCA, open banking, PSD2</li>
+          <li>Competitive landscape and disruption dynamics</li>
         </ul>
         <div class="tags" style="margin-bottom:1rem;">
-          <span class="tag">PowerPoint</span><span class="tag">Pitch Deck</span><span class="tag">Synergies</span><span class="tag">Football Field</span>
+          <span class="tag">Sector Analysis</span><span class="tag">Market Sizing</span><span class="tag">Regulation</span>
+        </div>
+        <div class="deliverable-status">In Progress</div>
+      </div>
+
+      <div class="deliverable-card" style="transition-delay:0.4s">
+        <div class="deliverable-num">005</div>
+        <div class="deliverable-title">Investment Thesis</div>
+        <div class="deliverable-desc">A structured investment thesis summarising the bull and bear case, key catalysts, risk factors, and a formal price target and recommendation — formatted to initiating coverage note standards.</div>
+        <ul class="deliverable-items">
+          <li>Bull case — key growth drivers and upside scenario</li>
+          <li>Bear case — risks, headwinds, and downside scenario</li>
+          <li>Key catalysts — earnings, product launches, regulation</li>
+          <li>Price target derivation — weighted valuation blend</li>
+          <li>Formal recommendation — Buy / Hold / Sell with rationale</li>
+        </ul>
+        <div class="tags" style="margin-bottom:1rem;">
+          <span class="tag">Investment Thesis</span><span class="tag">Price Target</span><span class="tag">Recommendation</span>
         </div>
         <div class="deliverable-status">In Progress</div>
       </div>
@@ -371,35 +399,35 @@
   <div class="container">
     <div class="section-header reveal">
       <div class="section-eyebrow">04 — Methodology</div>
-      <h2 class="section-title">How the <em>analysis is structured</em></h2>
+      <h2 class="section-title">How the <em>research is structured</em></h2>
     </div>
     <div class="methodology-grid">
       <div class="method-block">
         <div class="method-step">
           <div class="method-step-num">01</div>
-          <div class="method-step-text"><strong>Historical Analysis</strong> — Pull and clean Activision's 5-year income statement, balance sheet, and cash flow statement. Identify revenue and margin trends across PC, Console, and Mobile segments.</div>
+          <div class="method-step-text"><strong>Company Selection</strong> — Identify a publicly listed FinTech with sufficient data availability, interesting valuation dynamics, and clear sub-sector positioning in payments, lending, or infrastructure.</div>
         </div>
         <div class="method-step">
           <div class="method-step-num">02</div>
-          <div class="method-step-text"><strong>Projection Build</strong> — Forecast revenue using segment-level growth assumptions, model EBITDA margins, capex, and working capital to arrive at unlevered free cash flow over a 5-year horizon.</div>
+          <div class="method-step-text"><strong>Sector Framework</strong> — Map the competitive landscape, identify the right valuation metrics for the sub-sector, and establish the regulatory and macro backdrop before touching the model.</div>
         </div>
         <div class="method-step">
           <div class="method-step-num">03</div>
-          <div class="method-step-text"><strong>WACC Construction</strong> — Build the discount rate bottom-up using CAPM for cost of equity, observable bond yields for cost of debt, and market-value capital structure weighting.</div>
+          <div class="method-step-text"><strong>Financial Model Build</strong> — Construct the 3-statement model from historical filings, develop granular revenue assumptions by segment, and project 5 years of financials with explicit drivers.</div>
         </div>
       </div>
       <div class="method-block" style="transition-delay:0.15s">
         <div class="method-step">
           <div class="method-step-num">04</div>
-          <div class="method-step-text"><strong>Comparable Transactions</strong> — Identify 10+ precedent technology M&A deals, calculate EV/Revenue and EV/EBITDA multiples at announcement, and benchmark against the Microsoft / Activision implied multiples.</div>
+          <div class="method-step-text"><strong>Valuation</strong> — Run DCF from the model, build the trading comps table, and triangulate a price target using a blended weighting across methodologies — consistent with how equity research teams operate.</div>
         </div>
         <div class="method-step">
           <div class="method-step-num">05</div>
-          <div class="method-step-text"><strong>Synergy Framework</strong> — Quantify revenue synergies (Game Pass subscriber uplift) and cost synergies (duplicate functions), apply a realisation timeline, and compute NPV of total synergies vs. premium paid.</div>
+          <div class="method-step-text"><strong>Thesis Construction</strong> — Develop the bull and bear case, identify the 3–5 key factors that will determine whether the thesis plays out, and articulate a clear recommendation with a defined price target.</div>
         </div>
         <div class="method-step">
           <div class="method-step-num">06</div>
-          <div class="method-step-text"><strong>Pitch Deck Assembly</strong> — Synthesise all outputs into a structured buy-side deck — executive summary, valuation football field, synergy bridge, and risk section — formatted to IB presentation standards.</div>
+          <div class="method-step-text"><strong>Note Formatting</strong> — Write the initiating coverage note in the style of a sell-side research product — executive summary, sector backdrop, company overview, valuation, and risks — clean and presentation-ready.</div>
         </div>
       </div>
     </div>
@@ -408,7 +436,6 @@
 
 <div class="divider"></div>
 
-<!-- BACK -->
 <section class="back-section">
   <div class="container reveal">
     <a href="../index.html" class="back-link">← Back to Portfolio</a>
@@ -423,19 +450,16 @@
 </footer>
 
 <script>
-  // SCROLL REVEALS
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(el => { if (el.isIntersecting) el.target.classList.add('visible'); });
   }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
   document.querySelectorAll('.reveal, .deliverable-card, .method-block').forEach(el => observer.observe(el));
 
-  // THEME TOGGLE
   const html = document.documentElement;
   const toggleBtn = document.getElementById('themeToggle');
   const themeIcon = document.getElementById('themeIcon');
   const SUN = 'M12 2a1 1 0 011 1v1a1 1 0 01-2 0V3a1 1 0 011-1zm0 16a1 1 0 011 1v1a1 1 0 01-2 0v-1a1 1 0 011-1zm10-6a1 1 0 010 2h-1a1 1 0 010-2h1zM3 12a1 1 0 010 2H2a1 1 0 010-2h1zm15.07-7.07a1 1 0 010 1.41l-.71.71a1 1 0 01-1.41-1.41l.71-.71a1 1 0 011.41 0zM7.05 16.95a1 1 0 010 1.41l-.71.71a1 1 0 01-1.41-1.41l.71-.71a1 1 0 011.41 0zm11.9 0a1 1 0 011.41 1.41l-.71.71a1 1 0 01-1.41-1.41l.71-.71zM5.64 5.64a1 1 0 011.41 0l.71.71A1 1 0 016.35 7.76l-.71-.71a1 1 0 010-1.41zM12 7a5 5 0 110 10A5 5 0 0112 7z';
   const MOON = 'M21 12.79A9 9 0 1111.21 3a7 7 0 0010 9.79z';
-
   function applyTheme(t) {
     html.setAttribute('data-theme', t);
     themeIcon.querySelector('path').setAttribute('d', t === 'dark' ? SUN : MOON);
