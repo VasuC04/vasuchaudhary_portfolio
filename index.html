@@ -230,6 +230,13 @@
   .cert-name { font-size:0.85rem; font-weight:500; }
   .cert-desc { font-size:0.73rem; color:var(--text-muted); margin-top:0.1rem; font-family:var(--font-mono); }
 
+  /* STAT CARDS */
+  .stat-card { background:var(--surface); border:1px solid var(--border); border-radius:4px; padding:1.25rem 1.5rem; backdrop-filter:blur(12px); transition:border-color 0.25s; }
+  .stat-card:hover { border-color:var(--accent); }
+  .stat-label { font-family:var(--font-mono); font-size:0.62rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--accent); margin-bottom:0.35rem; font-weight:400; }
+  .stat-value { font-family:var(--font-display); font-size:1.15rem; font-weight:700; color:var(--text-primary); line-height:1.2; margin-bottom:0.25rem; letter-spacing:-0.01em; }
+  .stat-sub { font-family:var(--font-mono); font-size:0.68rem; color:var(--text-muted); font-weight:300; letter-spacing:0.04em; }
+
   /* PROJECTS */
   .projects-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:1.5rem; }
   .project-card { background:var(--surface); border:1px solid var(--border); border-radius:4px; padding:2rem; backdrop-filter:blur(12px); position:relative; overflow:hidden; cursor:pointer; opacity:0; transform:translateY(20px); transition:opacity 0.6s, transform 0.6s, box-shadow 0.3s, border-color 0.3s; }
